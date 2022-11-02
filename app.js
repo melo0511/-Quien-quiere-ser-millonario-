@@ -27,26 +27,18 @@ function dataRequest(){
 
 function dataProcess(data) {
 
+    let index = 1
+
+    let pre = 'pregunta'+index
+
 // containerPrincipal.innerHTML = ''
 // containerPreguntas.innerHTML = ''
 
-const {eleccion1,eleccion2,eleccion3,eleccion4,question1} = data.pregunta1
+preguntaP.textContent = data.pregunta1.question
 
-preguntaP.textContent = question1
-
-ele1.textContent = eleccion1
-ele2.textContent = eleccion2
-ele3.textContent = eleccion3
-ele4.textContent = eleccion4
-
-buttons.addEventListener('click',()=>{
-
-    if(ele1.value == 1){
-        console.log("gano");
-    }else{
-        console.log("f");
-    }
-
-})
+ele1.textContent = data.pregunta1.choices[0]
+ele2.textContent = data.pregunta1.choices[1]
+ele3.textContent = data.pregunta1.choices[2]
+ele4.textContent = data.pregunta1.choices[3]
 
 }
