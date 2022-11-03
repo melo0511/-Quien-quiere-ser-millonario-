@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: transparent;
+}
+
+#capa{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    flex-direction: column;
+    background: url(https://media.giphy.com/media/ITRemFlr5tS39AzQUL/giphy.gif);
+    background-size: 100% 100%;
+}
+
+#img{
+    width: 55%;
+    height: 60%;
+    background: url(./img/logo.jpg);
+    background-size: 100% 100%;
+}
+
+#buttonP{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-bottom: 100px;
+}
+
+#containerButton{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    background: transparent;
+}

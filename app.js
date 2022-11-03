@@ -1,44 +1,74 @@
+const btnNext = document.getElementById("btnNext")
+const btnR = document.getElementById("btnR")
+
+//Pregunta
+
+const preguntaPrincipal = document.getElementById('preguntaPrincipal')
+
+//Respuestas(botones)
+
+const button1 = document.getElementById('a')
+const button2 = document.getElementById('b')
+const button3 = document.getElementById('c')
+const button4 = document.getElementById('d')
+
+//Partes
+
+const header = document.getElementById('header')
+const mid  = document.getElementById('mid')
+const footer = document.getElementById('footer')
+
 import {preguntas} from "./preguntas.js";
 
-const containerPrincipal = document.getElementById('containerPrincipal')
-const containerPreguntas = document.getElementById('containerPreguntas')
+let count = 1;
 
-const preguntaP = document.getElementById('preguntaP')
+window.addEventListener("DOMContentLoaded", data)
+  btnNext.addEventListener('click',()=>{
 
-const buttons = document.getElementById('buttons')
+    if(count>preguntas.length){
+        count--
+    }
 
-const ele1 = document.getElementById('ele1')
-const ele2 = document.getElementById('ele2')
-const ele3 = document.getElementById('ele3')
-const ele4 = document.getElementById('ele4')
+    count++
+    data()
+  })
 
-window.addEventListener('DOMContentLoaded',dataRequest)
+  btnR.addEventListener('click',()=>{
+    count--
+    if(count<1){
+        count++
+    }
+    
+    data()
+  })
 
-function dataRequest(){
+  function data(res) {
+   
+   console.log(count);
+    preguntas.map((data)=>{
+        if(count <= 1){
+            console.log(data.Question1);
+            
 
-    preguntas.map((element)=>{
 
-        console.log(element);
+            preguntaPrincipal.textContent = data.Question1.title
 
-        dataProcess(element)
+            button1.textContent = data.Question1.a
+            button2.textContent = data.Question1.b
+            button3.textContent = data.Question1.c
+            button4.textContent = data.Question1.d
+           
+        }
+        if(count == 2){
+            console.log(data.Question2);
+
+            preguntaPrincipal.textContent = data.Question2.title
+
+            button1.textContent = data.Question2.a
+            button2.textContent = data.Question2.b
+            button3.textContent = data.Question2.c
+            button4.textContent = data.Question2.d
+        }
+
     })
-
-}
-
-function dataProcess(data) {
-
-    let index = 1
-
-    let pre = 'pregunta'+index
-
-// containerPrincipal.innerHTML = ''
-// containerPreguntas.innerHTML = ''
-
-preguntaP.textContent = data.pregunta1.question
-
-ele1.textContent = data.pregunta1.choices[0]
-ele2.textContent = data.pregunta1.choices[1]
-ele3.textContent = data.pregunta1.choices[2]
-ele4.textContent = data.pregunta1.choices[3]
-
-}
+  }
