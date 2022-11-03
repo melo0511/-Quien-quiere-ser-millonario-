@@ -46,7 +46,7 @@ main{
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 100px;
+    outline: none;
 }
 
 #containerButton{
@@ -56,4 +56,5 @@ main{
     justify-content: center;
     position: absolute;
     background: transparent;
+    margin-bottom: 5rem;
 }

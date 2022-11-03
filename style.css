@@ -6,7 +6,8 @@
 body{
     width: 100vw;
     height: 100vh;
-    background: url(https://media.giphy.com/media/Q34Q46x7bUUKJfbn0s/giphy.gif);
+    background: red;
+    /* background: url(https://media.giphy.com/media/Q34Q46x7bUUKJfbn0s/giphy.gif); */
     background-size: 100% 100%;
     color: white;
 }
