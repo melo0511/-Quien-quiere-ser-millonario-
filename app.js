@@ -1,74 +1,173 @@
-const btnNext = document.getElementById("btnNext")
-const btnR = document.getElementById("btnR")
-
-//Pregunta
-
-const preguntaPrincipal = document.getElementById('preguntaPrincipal')
-
-//Respuestas(botones)
-
-const button1 = document.getElementById('a')
-const button2 = document.getElementById('b')
-const button3 = document.getElementById('c')
-const button4 = document.getElementById('d')
-
-//Partes
-
-const header = document.getElementById('header')
-const mid  = document.getElementById('mid')
-const footer = document.getElementById('footer')
-
 import {preguntas} from "./preguntas.js";
+let posibles_respuestas;
+let pregunta;
 
-let count = 1;
+const longitud = []
+window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
 
-window.addEventListener("DOMContentLoaded", data)
-  btnNext.addEventListener('click',()=>{
+const btn1 = document.getElementById("btn1")
+const btn2 = document.getElementById("btn2")
+const btn3 = document.getElementById("btn3")
+const btn4 = document.getElementById("btn4")
 
-    if(count>preguntas.length){
-        count--
-    }
+// btn1.addEventListener('click',press(0))
+// btn2.addEventListener('click',press(1))
+// btn3.addEventListener('click',press(2))
+// btn4.addEventListener('click',press(3))
 
-    count++
-    data()
-  })
-
-  btnR.addEventListener('click',()=>{
-    count--
-    if(count<1){
-        count++
+btn1.addEventListener('click',()=>{
+    if(posibles_respuestas[0] == pregunta.response){
+        btns[0].style.backgroundColor = "lightgreen";
+    }else{
+        btns[0].style.backgroundColor = "red";
     }
     
-    data()
-  })
+    setTimeout(() => {
+        reiniciar()
+    }, 3000);
+})
 
-  function data(res) {
-   
-   console.log(count);
-    preguntas.map((data)=>{
-        if(count <= 1){
-            console.log(data.Question1);
-            
+btn2.addEventListener('click',()=>{
+    if(posibles_respuestas[1] == pregunta.response){
+        btns[1].style.backgroundColor = "lightgreen";
+    }else{
+        btns[1].style.backgroundColor = "red";
+    }
+      
+    setTimeout(() => {
+        reiniciar()
+    }, 3000);
+})
+
+btn3.addEventListener('click',()=>{
+    if(posibles_respuestas[2] == pregunta.response){
+        btns[2].style.backgroundColor = "lightgreen";
+
+    }else{
+        btns[2].style.backgroundColor = "red";
+    }
+      
+    setTimeout(() => {
+        reiniciar()
+    }, 3000);
+})
+
+btn4.addEventListener('click',()=>{
+    if(posibles_respuestas[3] == pregunta.response){
+        btns[3].style.backgroundColor = "lightgreen";
+    }else{
+        btns[3].style.backgroundColor = "red";
+    }
+      
+    setTimeout(() => {
+        reiniciar()
+    }, 3000);
+})
+let counta = 0;
+
+function reiniciar() {
+    
+    
+    counta++
+    console.log(counta);
+    for (const btn of btns) {
+        btn.style.background = "white";
+       
+    }
+
+    if(counta >=8){
+        window.location.href = "./final.html"
+    }else{
+        escogerPreguntas(counta)
+        desordenar(pregunta)
+    }
+
+}
 
 
-            preguntaPrincipal.textContent = data.Question1.title
 
-            button1.textContent = data.Question1.a
-            button2.textContent = data.Question1.b
-            button3.textContent = data.Question1.c
-            button4.textContent = data.Question1.d
-           
-        }
-        if(count == 2){
-            console.log(data.Question2);
+ let btns = [
+    select_id("btn1"),
+    select_id("btn2"),
+    select_id("btn3"),
+    select_id("btn4")
+]
 
-            preguntaPrincipal.textContent = data.Question2.title
+function escogerPreguntas(p){
 
-            button1.textContent = data.Question2.a
-            button2.textContent = data.Question2.b
-            button3.textContent = data.Question2.c
-            button4.textContent = data.Question2.d
-        }
 
-    })
-  }
+// console.log(p);
+preguntas.forEach((element)=>{
+    
+pregunta = element[p]
+
+
+
+
+    // let data = Object.entries(element)
+// console.log(element[1]);
+// console.log(data)
+
+select_id("title").innerHTML = pregunta.title
+select_id("btn1").innerHTML = pregunta.response
+select_id("btn2").innerHTML = pregunta.incorreta1
+select_id("btn3").innerHTML = pregunta.incorreta2
+select_id("btn4").innerHTML = pregunta.incorreta3
+
+desordenar(pregunta)
+})
+}
+
+
+
+
+
+
+function desordenar(pregunta){
+    posibles_respuestas = [
+    pregunta.response,
+    pregunta.incorreta1,
+    pregunta.incorreta2,
+    pregunta.incorreta3
+]
+
+
+posibles_respuestas.sort(()=> Math.random()-0.5)
+
+select_id("btn1").innerHTML = posibles_respuestas[0]
+select_id("btn2").innerHTML = posibles_respuestas[1]
+select_id("btn3").innerHTML = posibles_respuestas[2]
+select_id("btn4").innerHTML = posibles_respuestas[3]
+}
+
+
+
+
+
+
+
+function select_id(id) {
+    return document.getElementById(id)
+}
+
+
+function styles(id) {
+    return select_id(id).style
+}
+/////////////////////////////////////////////////////
+
+
+
+// function tiempo(){
+
+//     let menos = 0
+
+//     setInterval(() => {
+
+//         const count = document.getElementById('count')
+        
+//         count.textContent = "00:" 
+    
+//     }, 1000);
+    
+// }

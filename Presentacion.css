@@ -25,13 +25,13 @@ main{
     justify-content:space-around;
     align-items: center;
     flex-direction: column;
-    background: url(https://media.giphy.com/media/ITRemFlr5tS39AzQUL/giphy.gif);
+    background: url(./img/fondo.gif);
     background-size: 100% 100%;
 }
 
 #img{
-    width: 55%;
-    height: 60%;
+    width: 65%;
+    height: 70%;
     background: url(./img/logo.jpg);
     background-size: 100% 100%;
 }
