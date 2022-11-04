@@ -1,9 +1,12 @@
 import {preguntas} from "./preguntas.js";
 let posibles_respuestas;
 let pregunta;
+let stop = 0
 
 const longitud = []
 window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
+
+tiempo()
 
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
@@ -24,6 +27,8 @@ btn1.addEventListener('click',()=>{
     
     setTimeout(() => {
         reiniciar()
+        clearInterval(stop)
+        tiempo()
     }, 3000);
 })
 
@@ -36,6 +41,8 @@ btn2.addEventListener('click',()=>{
       
     setTimeout(() => {
         reiniciar()
+        clearInterval(stop)
+        tiempo()
     }, 3000);
 })
 
@@ -49,6 +56,8 @@ btn3.addEventListener('click',()=>{
       
     setTimeout(() => {
         reiniciar()
+        clearInterval(stop)
+        tiempo()
     }, 3000);
 })
 
@@ -61,6 +70,8 @@ btn4.addEventListener('click',()=>{
       
     setTimeout(() => {
         reiniciar()
+        clearInterval(stop)
+        tiempo()
     }, 3000);
 })
 let counta = 0;
@@ -71,7 +82,7 @@ function reiniciar() {
     counta++
     console.log(counta);
     for (const btn of btns) {
-        btn.style.background = "white";
+        btn.style.background = "#502158";
        
     }
 
@@ -83,8 +94,6 @@ function reiniciar() {
     }
 
 }
-
-
 
  let btns = [
     select_id("btn1"),
@@ -118,11 +127,6 @@ desordenar(pregunta)
 })
 }
 
-
-
-
-
-
 function desordenar(pregunta){
     posibles_respuestas = [
     pregunta.response,
@@ -130,7 +134,6 @@ function desordenar(pregunta){
     pregunta.incorreta2,
     pregunta.incorreta3
 ]
-
 
 posibles_respuestas.sort(()=> Math.random()-0.5)
 
@@ -140,12 +143,6 @@ select_id("btn3").innerHTML = posibles_respuestas[2]
 select_id("btn4").innerHTML = posibles_respuestas[3]
 }
 
-
-
-
-
-
-
 function select_id(id) {
     return document.getElementById(id)
 }
@@ -154,20 +151,29 @@ function select_id(id) {
 function styles(id) {
     return select_id(id).style
 }
+
 /////////////////////////////////////////////////////
 
+function tiempo(){
 
+    let time = 60
 
-// function tiempo(){
+    stop = setInterval(() => {
 
-//     let menos = 0
+        const count = document.getElementById('count')
 
-//     setInterval(() => {
-
-//         const count = document.getElementById('count')
+        time = time -1 
         
-//         count.textContent = "00:" 
+        count.textContent = "00:" + time
+
+        if(time<10){
+            count.textContent = "00:0" + time
+        }
+
+        if(time<0){
+            count.textContent = "Tiempo"               
+        }
     
-//     }, 1000);
+    }, 1000);
     
-// }
+}

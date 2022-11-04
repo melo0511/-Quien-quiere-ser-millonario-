@@ -2,7 +2,7 @@ export const preguntas =[
   {
 
    0:{
-      title: "1.El reglamento del aprendiz se adopta como parte del acuerdo",
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
 
       incorreta1: "009",
       incorreta2: "Entre el subdirector y los instructores",
@@ -19,7 +19,7 @@ export const preguntas =[
     },
 
     2:{
-      title: "3.Según el capitulo II articulo 8 del reglamento del aprendiz, los estímulos e incentivos que forman parte plan nacional de bienestar son:",
+      title: "3. Según el capitulo II articulo 8 del reglamento del aprendiz, los estímulos e incentivos que forman parte plan nacional de bienestar son:",
       incorreta1: "Recibir auxilio de transporte",
       incorreta2: "Reconocimiento por parte del comité de evaluación a los aprendices que se destacan por su excelente desempeño académico y convivencia.",
       response: "Ser exonerado de la presentación de instrumentos de evaluación",
@@ -27,7 +27,7 @@ export const preguntas =[
     },
 
     3:{
-      title: "4.El reglamento habla de los deberes de los aprendices en el capítulo.",
+      title: "4. El reglamento habla de los deberes de los aprendices en el capítulo.",
       incorreta1: "VII",
       response: "VI",
       incorreta3: "II",
@@ -59,7 +59,7 @@ export const preguntas =[
     },
 
     7:{
-      title: "8.  Es deber de los aprendices:",
+      title: "8. Es deber de los aprendices:",
       incorreta1: "Portar el uniforme el fin de semana cuando se reúna con los compañeros del Sena.",
       response: "Portar el carné cuando asista a conciertos, discotecas, restaurantes, fiestas de 15, grados y además actividades sociales, como representante de la comunidad Sena.",
       incorreta2: "Respetar los bienes y elementos de propiedad de los integrantes de la comunidad que estén en su ambiente de formación.",
