@@ -47,6 +47,7 @@ main{
     justify-content: center;
     align-items: flex-end;
     outline: none;
+    border: none;
 }
 
 #containerButton{
