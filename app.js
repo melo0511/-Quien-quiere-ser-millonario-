@@ -13,10 +13,12 @@ btn4.disabled = false
 }
 
 function desactivarBotones(){
+
 btn1.disabled = true
 btn2.disabled = true
 btn3.disabled = true
 btn4.disabled = true
+
 }
 
 const longitud = []
@@ -26,8 +28,6 @@ window.addEventListener('DOMContentLoaded',()=>{
     tiempo()
     activarBotones()
 })
-
-
 
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
@@ -150,9 +150,9 @@ pregunta = element[p]
 
 select_id("title").innerHTML = pregunta.title
 select_id("btn1").innerHTML = pregunta.response
-select_id("btn2").innerHTML = pregunta.incorreta1
-select_id("btn3").innerHTML = pregunta.incorreta2
-select_id("btn4").innerHTML = pregunta.incorreta3
+select_id("btn2").innerHTML = pregunta.incorrecta1
+select_id("btn3").innerHTML = pregunta.incorrecta2
+select_id("btn4").innerHTML = pregunta.incorrecta3
 
 desordenar(pregunta)
 })
@@ -161,9 +161,9 @@ desordenar(pregunta)
 function desordenar(pregunta){
     posibles_respuestas = [
     pregunta.response,
-    pregunta.incorreta1,
-    pregunta.incorreta2,
-    pregunta.incorreta3
+    pregunta.incorrecta1,
+    pregunta.incorrecta2,
+    pregunta.incorrecta3
 ]
 
 posibles_respuestas.sort(()=> Math.random()-0.5)
@@ -177,7 +177,6 @@ select_id("btn4").innerHTML = posibles_respuestas[3]
 function select_id(id) {
     return document.getElementById(id)
 }
-
 
 function styles(id) {
     return select_id(id).style
