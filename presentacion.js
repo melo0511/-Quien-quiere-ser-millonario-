@@ -10,4 +10,4 @@ window.addEventListener('load',()=>{
     }, 2000);
 })
 
-buttonP.addEventListener('click', ()=>window.location.href = "./index.html")
+buttonP.addEventListener('click', ()=>window.location.href = "./indexPreguntas.html")
