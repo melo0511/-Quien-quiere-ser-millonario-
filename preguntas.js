@@ -25,7 +25,7 @@ export const preguntas =[
       incorrecta1: "Recibir auxilio de transporte",
       incorrecta2: "Reconocimiento por parte del comité de evaluación a los aprendices que se destacan por su excelente desempeño académico y convivencia.",
       response: "Ser exonerado de la presentación de instrumentos de evaluación",
-      incorrecta4: "Recibir apoyo de alimentación (almuerzos)"
+      incorrecta3: "Recibir apoyo de alimentación (almuerzos)"
     },
 
     3:{
@@ -33,17 +33,17 @@ export const preguntas =[
 
       incorrecta1: "VII",
       response: "VI",
-      incorrecta3: "II",
-      incorrecta4: "III"
+      incorrecta2: "II",
+      incorrecta3: "III"
     },
 
     4:{
       title: "5. De acuerdo con el reglamento son deberes de los aprendices:",
 
       response: "Cumplir con las actividades de su proceso formativo durante la etapa lectiva",
-      incorrecta2: "Conocer y asumir directrices institucionales, al igual que el reglamento del aprendiz, y cumplir las que sean de su agrado.",
-      incorrecta3: "Portar permanentemente el carné en un lugar visible, durante su proceso formativo, y renovarlo de acuerdo con las disposiciones vigente y devolverlo al finalizar el programa o cuando se presente retiro o aplazamiento.",
-      incorrecta4: "Postularse a las convocatorias de apoyos socioeconómicos para tener como subsidiar gastos de la formación."
+      incorrecta1: "Conocer y asumir directrices institucionales, al igual que el reglamento del aprendiz, y cumplir las que sean de su agrado.",
+      incorrecta2: "Portar permanentemente el carné en un lugar visible, durante su proceso formativo, y renovarlo de acuerdo con las disposiciones vigente y devolverlo al finalizar el programa o cuando se presente retiro o aplazamiento.",
+      incorrecta3: "Postularse a las convocatorias de apoyos socioeconómicos para tener como subsidiar gastos de la formación."
     },
 
     5:{
@@ -51,8 +51,8 @@ export const preguntas =[
 
       incorrecta1: "Los directores de grupo",
       response: "Los coordinadores académicos",
-      incorrecta3: "Los voceros",
-      incorrecta4: "El comité de evaluación y seguimiento"
+      incorrecta2: "Los voceros",
+      incorrecta3: "El comité de evaluación y seguimiento"
     },
 
     6:{
