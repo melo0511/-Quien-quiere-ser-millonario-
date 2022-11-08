@@ -142,11 +142,15 @@ main{
 }
 
 #bottom2 button{
-    width: 40%;
-    height: 35%;
+    width: 38%;
+    height: 38%;
     text-align: center;
     cursor: pointer;
     background: #502158;
     border: 5px solid white;
     color: white;
+}
+
+#bottom2 button:active{
+    background: #b95fc9;
 }

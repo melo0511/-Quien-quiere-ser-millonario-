@@ -15,10 +15,17 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 #Principal{
     width: 50%;
     height: 50%;
     background: blue;
+}
+
+#reiniciar{
+    width: 8%;
+    height: 3rem;
+    margin-top: 4rem;
 }

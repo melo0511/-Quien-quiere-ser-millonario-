@@ -3,10 +3,31 @@ let posibles_respuestas;
 let pregunta;
 let stop = 0
 
+function activarBotones(){
+
+btn1.disabled = false
+btn2.disabled = false
+btn3.disabled = false
+btn4.disabled = false
+
+}
+
+function desactivarBotones(){
+btn1.disabled = true
+btn2.disabled = true
+btn3.disabled = true
+btn4.disabled = true
+}
+
 const longitud = []
 window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
 
-tiempo()
+window.addEventListener('DOMContentLoaded',()=>{
+    tiempo()
+    activarBotones()
+})
+
+
 
 const btn1 = document.getElementById("btn1")
 const btn2 = document.getElementById("btn2")
@@ -19,6 +40,9 @@ const btn4 = document.getElementById("btn4")
 // btn4.addEventListener('click',press(3))
 
 btn1.addEventListener('click',()=>{
+    clearInterval(stop)
+    desactivarBotones()
+
     if(posibles_respuestas[0] == pregunta.response){
         btns[0].style.backgroundColor = "lightgreen";
     }else{
@@ -33,6 +57,9 @@ btn1.addEventListener('click',()=>{
 })
 
 btn2.addEventListener('click',()=>{
+    clearInterval(stop)
+    desactivarBotones()
+
     if(posibles_respuestas[1] == pregunta.response){
         btns[1].style.backgroundColor = "lightgreen";
     }else{
@@ -47,6 +74,9 @@ btn2.addEventListener('click',()=>{
 })
 
 btn3.addEventListener('click',()=>{
+    clearInterval(stop)
+    desactivarBotones()
+
     if(posibles_respuestas[2] == pregunta.response){
         btns[2].style.backgroundColor = "lightgreen";
 
@@ -62,6 +92,9 @@ btn3.addEventListener('click',()=>{
 })
 
 btn4.addEventListener('click',()=>{
+    clearInterval(stop)
+    desactivarBotones()
+
     if(posibles_respuestas[3] == pregunta.response){
         btns[3].style.backgroundColor = "lightgreen";
     }else{
@@ -78,7 +111,8 @@ let counta = 0;
 
 function reiniciar() {
     
-    
+    activarBotones()
+
     counta++
     console.log(counta);
     for (const btn of btns) {
@@ -109,9 +143,6 @@ function escogerPreguntas(p){
 preguntas.forEach((element)=>{
     
 pregunta = element[p]
-
-
-
 
     // let data = Object.entries(element)
 // console.log(element[1]);
@@ -171,7 +202,13 @@ function tiempo(){
         }
 
         if(time<0){
-            count.textContent = "Tiempo"               
+
+            count.textContent = "Tiempo"
+
+            reiniciar()
+            clearInterval(stop)
+            tiempo()  
+
         }
     
     }, 1000);
