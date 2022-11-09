@@ -6,9 +6,8 @@ let time = 60
 
 //Puntajes
 
-export let puntaje = 0
-export let buenas = 0
-export let malas = 0
+let buenas = 0
+let malas = 0
 
 function activarBotones(){
 
@@ -40,10 +39,14 @@ const btnContinuar = document.createElement('button')
 containerPregunta.classList.add('containerPregunta')
 btnContinuar.classList.add('btnContinuar')
 
+const btnSiguiente = document.getElementById('btnSiguiente')
 
 window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
 
 window.addEventListener('DOMContentLoaded',()=>{
+
+    btnSiguiente.style.display = "none"
+
     activarBotones()
 
     capaPregunta.appendChild(containerPregunta)
@@ -76,13 +79,13 @@ btn1.addEventListener('click',()=>{
 
     if(posibles_respuestas[0] == pregunta.response){
         btns[0].style.backgroundColor = "lightgreen";
-        puntaje+=100
         buenas++
         reseteo()
+        
     }else{
         btns[0].style.backgroundColor = "red";
         malas++
-        comodines()
+        comodines() 
     }
     
 })
@@ -93,10 +96,8 @@ btn2.addEventListener('click',()=>{
 
     if(posibles_respuestas[1] == pregunta.response){
         btns[1].style.backgroundColor = "lightgreen";
-        puntaje+=100
         buenas++
         reseteo()
-        
     }else{
         btns[1].style.backgroundColor = "red";
         malas++
@@ -111,7 +112,6 @@ btn3.addEventListener('click',()=>{
 
     if(posibles_respuestas[2] == pregunta.response){
         btns[2].style.backgroundColor = "lightgreen";
-        puntaje+=100
         buenas++
         reseteo()
     }else{
@@ -128,7 +128,6 @@ btn4.addEventListener('click',()=>{
 
     if(posibles_respuestas[3] == pregunta.response){
         btns[3].style.backgroundColor = "lightgreen";
-        puntaje+=100
         buenas++
         reseteo()
     }else{
@@ -152,7 +151,6 @@ publico.addEventListener("click",()=>{
 })
 
 function comodines (){
-   alert("comodines activos")
    publico.style.borderColor = "rgb(13, 255, 0)"
    telefono.style.borderColor = "rgb(13, 255, 0)"
 
@@ -171,13 +169,17 @@ function reseteo () {
         clearInterval(stop)
     }, 3000);  
 }
+
+const TotalBuenas = document.getElementById('TotalBuenas')
+const TotalMalas = document.getElementById('TotalMalas')
+
 function reiniciar() {
 
+    TotalBuenas.textContent = "Total Buenas: "+buenas
+    TotalMalas.textContent = "Total Malas: "+malas
+
     clearInterval(stop)
-    temp.textContent = "01:00"
-    // console.log(puntaje);
-    // console.log(buenas);
-    // console.log(malas);
+    temp.textContent = "01:00";
 
     capaPregunta.style.display = "flex"
     PreguntaPrincipal.style.display = "flex"
@@ -191,7 +193,7 @@ function reiniciar() {
     }
 
     if(counta >=12){
-        window.location.href = "./final.html"
+        window.location.href = "./index.html"
     }else{
         escogerPreguntas(counta)
         desordenar(pregunta)
@@ -268,6 +270,7 @@ function tiempo(){
 
             temp.textContent = "Tiempo"
             temp.style.color = "white"
+            malas++
 
             reiniciar()
             clearInterval(stop)

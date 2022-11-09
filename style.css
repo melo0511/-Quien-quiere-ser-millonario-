@@ -55,9 +55,10 @@ main{
     width: 25%;
     height: 100%;
     display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+    justify-content: flex-start;
+    align-items: center;
     background: transparent;
+    flex-direction: column;
 }
 
 #topleft button{
@@ -70,6 +71,26 @@ main{
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
     cursor: pointer;
+}
+
+#containerComodines{
+    width: 100%;
+    height: 40% ;
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#containerPuntaje{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 70%;
+    height: 25% ;
+    background:transparent;
+    font-size: 15px;
 }
 
 #topmid{
@@ -92,8 +113,9 @@ main{
     width: 25%;
     height: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    align-items: center;
+    background: transparent;
+    flex-direction: column;
     background: transparent;
 }
 
@@ -108,6 +130,21 @@ main{
     border-top:none ;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
+}
+
+#containerSiguiente{
+    width: 60%;
+    height: 30%;
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+}
+
+#btnSiguiente{
+    width: 6rem;
+    height: 3rem;
 }
 
 #midBottom{
@@ -129,6 +166,7 @@ main{
     align-items: center;
     background: transparent;
     text-align: center;
+    font-size:23px;
 }
 
 #bottom2{
@@ -150,6 +188,7 @@ main{
     background: #502158;
     border: 5px solid white;
     color: white;
+    font-size: 15px;
 }
 
 #bottom2 button:active{
@@ -223,4 +262,10 @@ main{
 .btnContinuar:active {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
+}
+
+.audio{
+    position: absolute;
+    display: hidden;
+    visibility: hidden;
 }

@@ -1,11 +1,18 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body{
     width: 100vw;
     height: 100vh;
+    overflow: hidden;
+    background-color: blue;
+}
+
+.video{
+    width: 100%;
 }
 
 main{
@@ -25,14 +32,6 @@ main{
     justify-content:space-around;
     align-items: center;
     flex-direction: column;
-    background: url(./img/fondo.gif);
-    background-size: 100% 100%;
-}
-
-#img{
-    width: 65%;
-    height: 70%;
-    background: url(./img/logo.jpg);
     background-size: 100% 100%;
 }
 
@@ -42,12 +41,12 @@ main{
     background: transparent;
     color: white;
     cursor: pointer;
-    font-size: 3rem;
+    font-size: 2rem;
     display: flex;
+    border: none;
     justify-content: center;
     align-items: flex-end;
     outline: none;
-    border: none;
 }
 
 #containerButton{
