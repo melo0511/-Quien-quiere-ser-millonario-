@@ -3,6 +3,8 @@ let posibles_respuestas;
 let pregunta;
 let stop = 0
 
+const body = document.getElementById('body')
+
 //Puntajes
 
 export let puntaje = 0
@@ -28,11 +30,16 @@ btn4.disabled = true
 }
 
 const longitud = []
+
+const capaPregunta = document.createElement('section')
+capaPregunta.classList.add('capaPregunta')
+
 window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
 
 window.addEventListener('DOMContentLoaded',()=>{
     tiempo()
     activarBotones()
+    body.appendChild(capaPregunta)
 })
 
 const btn1 = document.getElementById("btn1")
@@ -63,6 +70,7 @@ btn1.addEventListener('click',()=>{
         clearInterval(stop)
         tiempo()
     }, 3000);
+    
 })
 
 btn2.addEventListener('click',()=>{
@@ -202,7 +210,7 @@ function styles(id) {
 
 function tiempo(){
 
-    let time = 1
+    let time = 60
 
     stop = setInterval(() => {
 
