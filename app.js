@@ -79,12 +79,10 @@ btn1.addEventListener('click',()=>{
 
     if(posibles_respuestas[0] == pregunta.response){
         btns[0].style.backgroundColor = "lightgreen";
-        buenas++
+        btnSiguiente.style.display = "flex"
         reseteo()
-        
     }else{
         btns[0].style.backgroundColor = "red";
-        malas++
         comodines() 
     }
     
@@ -96,11 +94,10 @@ btn2.addEventListener('click',()=>{
 
     if(posibles_respuestas[1] == pregunta.response){
         btns[1].style.backgroundColor = "lightgreen";
-        buenas++
+        btnSiguiente.style.display = "flex"
         reseteo()
     }else{
         btns[1].style.backgroundColor = "red";
-        malas++
         comodines()
     }
       
@@ -112,11 +109,9 @@ btn3.addEventListener('click',()=>{
 
     if(posibles_respuestas[2] == pregunta.response){
         btns[2].style.backgroundColor = "lightgreen";
-        buenas++
         reseteo()
     }else{
         btns[2].style.backgroundColor = "red";
-        malas++
         comodines()
     }
    
@@ -128,11 +123,9 @@ btn4.addEventListener('click',()=>{
 
     if(posibles_respuestas[3] == pregunta.response){
         btns[3].style.backgroundColor = "lightgreen";
-        buenas++
         reseteo()
     }else{
         btns[3].style.backgroundColor = "red";
-        malas++
         comodines()
     }
         
