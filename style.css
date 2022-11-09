@@ -84,7 +84,7 @@ main{
 #midImg{
     width: 60%;
     height: 80%;
-    background: url(../img/logo.jpg);
+    background: url(./img/logo.jpg);
     background-size: 100% 100%;
 }
 
@@ -172,7 +172,7 @@ main{
 .containerPregunta{
     width: 90%;
     text-align: center;
-    background: red;
+    background: transparent;
     display: flex;
     justify-content: center;
     align-items: center;
