@@ -11,7 +11,7 @@ export const preguntas =[
     },
 
     1:{
-      title: "2. De acuerdo el reglamento son derechos del aprendiz Sena.",
+      title: "2. De acuerdo con el reglamento son derechos del aprendiz Sena.",
 
       incorrecta1: "Presentar los instrumentos de evaluación cuando se sienta preparado.",
       incorrecta2: "Tener conocimiento de los resultados obtenidos en las evaluaciones dentro d ellos 8 días hábiles siguientes.",

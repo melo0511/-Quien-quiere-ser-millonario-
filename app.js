@@ -173,6 +173,8 @@ function reseteo () {
 }
 function reiniciar() {
 
+    clearInterval(stop)
+    temp.textContent = "01:00"
     // console.log(puntaje);
     // console.log(buenas);
     // console.log(malas);
@@ -253,7 +255,6 @@ function tiempo(){
     let time = 60
 
     stop = setInterval(() => {
-
 
         time = time -1 
         
