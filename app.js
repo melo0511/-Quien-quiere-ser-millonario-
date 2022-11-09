@@ -2,8 +2,7 @@ import {preguntas} from "./preguntas.js";
 let posibles_respuestas;
 let pregunta;
 let stop = 0
-
-const body = document.getElementById('body')
+let time = 60
 
 //Puntajes
 
@@ -31,15 +30,34 @@ btn4.disabled = true
 
 const longitud = []
 
-const capaPregunta = document.createElement('section')
-capaPregunta.classList.add('capaPregunta')
+const capaPregunta = document.querySelector('.capaPregunta')
+const PreguntaPrincipal = document.getElementById('PreguntaPrincipal')
+
+const containerPregunta = document.createElement('div')
+
+const btnContinuar = document.createElement('button')
+
+containerPregunta.classList.add('containerPregunta')
+btnContinuar.classList.add('btnContinuar')
+
 
 window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
 
 window.addEventListener('DOMContentLoaded',()=>{
-    tiempo()
     activarBotones()
-    body.appendChild(capaPregunta)
+
+    capaPregunta.appendChild(containerPregunta)
+    capaPregunta.appendChild(btnContinuar)
+
+    select_id("PreguntaPrincipal").innerHTML = pregunta.title
+    btnContinuar.textContent = "Continuar"
+})
+
+btnContinuar.addEventListener('click',()=>{
+    clearInterval(stop)
+    tiempo()
+    capaPregunta.style.display = "none"
+    PreguntaPrincipal.style.display = "none"
 })
 
 const btn1 = document.getElementById("btn1")
@@ -47,10 +65,10 @@ const btn2 = document.getElementById("btn2")
 const btn3 = document.getElementById("btn3")
 const btn4 = document.getElementById("btn4")
 
-// btn1.addEventListener('click',press(0))
-// btn2.addEventListener('click',press(1))
-// btn3.addEventListener('click',press(2))
-// btn4.addEventListener('click',press(3))
+const publico = document.getElementById("comodinP")
+const telefono = document.getElementById("comodinT")
+
+const temp = document.getElementById("count")
 
 btn1.addEventListener('click',()=>{
     clearInterval(stop)
@@ -60,16 +78,12 @@ btn1.addEventListener('click',()=>{
         btns[0].style.backgroundColor = "lightgreen";
         puntaje+=100
         buenas++
+        reseteo()
     }else{
         btns[0].style.backgroundColor = "red";
         malas++
+        comodines()
     }
-    
-    setTimeout(() => {
-        reiniciar()
-        clearInterval(stop)
-        tiempo()
-    }, 3000);
     
 })
 
@@ -81,16 +95,14 @@ btn2.addEventListener('click',()=>{
         btns[1].style.backgroundColor = "lightgreen";
         puntaje+=100
         buenas++
+        reseteo()
+        
     }else{
         btns[1].style.backgroundColor = "red";
         malas++
+        comodines()
     }
       
-    setTimeout(() => {
-        reiniciar()
-        clearInterval(stop)
-        tiempo()
-    }, 3000);
 })
 
 btn3.addEventListener('click',()=>{
@@ -101,17 +113,13 @@ btn3.addEventListener('click',()=>{
         btns[2].style.backgroundColor = "lightgreen";
         puntaje+=100
         buenas++
-
+        reseteo()
     }else{
         btns[2].style.backgroundColor = "red";
         malas++
+        comodines()
     }
-      
-    setTimeout(() => {
-        reiniciar()
-        clearInterval(stop)
-        tiempo()
-    }, 3000);
+   
 })
 
 btn4.addEventListener('click',()=>{
@@ -122,29 +130,60 @@ btn4.addEventListener('click',()=>{
         btns[3].style.backgroundColor = "lightgreen";
         puntaje+=100
         buenas++
+        reseteo()
     }else{
         btns[3].style.backgroundColor = "red";
         malas++
+        comodines()
     }
-      
+        
+})
+
+publico.addEventListener("click",()=>{
+   
+    clearInterval(stop)
+    tiempo()
+    setInterval(() => {
+        publico.style.borderColor = "white"
+
+    }, 1000);
+    
+
+})
+
+function comodines (){
+   alert("comodines activos")
+   publico.style.borderColor = "rgb(13, 255, 0)"
+   telefono.style.borderColor = "rgb(13, 255, 0)"
+
+
     setTimeout(() => {
         reiniciar()
         clearInterval(stop)
-        tiempo()
     }, 3000);
-})
+}
+
 let counta = 0;
 
+function reseteo () {
+    setTimeout(() => {
+        reiniciar()
+        clearInterval(stop)
+    }, 3000);  
+}
 function reiniciar() {
 
-    console.log(puntaje);
-    console.log(buenas);
-    console.log(malas);
+    // console.log(puntaje);
+    // console.log(buenas);
+    // console.log(malas);
+
+    capaPregunta.style.display = "flex"
+    PreguntaPrincipal.style.display = "flex"
     
     activarBotones()
 
     counta++
-    console.log(counta);
+    // console.log(counta);
     for (const btn of btns) {
         btn.style.background = "#502158";
     }
@@ -172,6 +211,7 @@ preguntas.forEach((element)=>{
     
 pregunta = element[p]
 
+select_id("PreguntaPrincipal").innerHTML = pregunta.title
 select_id("title").innerHTML = pregunta.title
 select_id("btn1").innerHTML = pregunta.response
 select_id("btn2").innerHTML = pregunta.incorrecta1
@@ -214,19 +254,19 @@ function tiempo(){
 
     stop = setInterval(() => {
 
-        const count = document.getElementById('count')
 
         time = time -1 
         
-        count.textContent = "00:" + time
+        temp.textContent = "00:" + time
 
         if(time<10){
-            count.textContent = "00:0" + time
+            temp.textContent = "00:0" + time
         }
 
         if(time<0){
 
-            count.textContent = "Tiempo"
+            temp.textContent = "Tiempo"
+            temp.style.color = "white"
 
             reiniciar()
             clearInterval(stop)
