@@ -3,6 +3,12 @@ let posibles_respuestas;
 let pregunta;
 let stop = 0
 
+//Puntajes
+
+export let puntaje = 0
+export let buenas = 0
+export let malas = 0
+
 function activarBotones(){
 
 btn1.disabled = false
@@ -45,8 +51,11 @@ btn1.addEventListener('click',()=>{
 
     if(posibles_respuestas[0] == pregunta.response){
         btns[0].style.backgroundColor = "lightgreen";
+        puntaje+=100
+        buenas++
     }else{
         btns[0].style.backgroundColor = "red";
+        malas++
     }
     
     setTimeout(() => {
@@ -62,8 +71,11 @@ btn2.addEventListener('click',()=>{
 
     if(posibles_respuestas[1] == pregunta.response){
         btns[1].style.backgroundColor = "lightgreen";
+        puntaje+=100
+        buenas++
     }else{
         btns[1].style.backgroundColor = "red";
+        malas++
     }
       
     setTimeout(() => {
@@ -79,9 +91,12 @@ btn3.addEventListener('click',()=>{
 
     if(posibles_respuestas[2] == pregunta.response){
         btns[2].style.backgroundColor = "lightgreen";
+        puntaje+=100
+        buenas++
 
     }else{
         btns[2].style.backgroundColor = "red";
+        malas++
     }
       
     setTimeout(() => {
@@ -97,8 +112,11 @@ btn4.addEventListener('click',()=>{
 
     if(posibles_respuestas[3] == pregunta.response){
         btns[3].style.backgroundColor = "lightgreen";
+        puntaje+=100
+        buenas++
     }else{
         btns[3].style.backgroundColor = "red";
+        malas++
     }
       
     setTimeout(() => {
@@ -110,6 +128,10 @@ btn4.addEventListener('click',()=>{
 let counta = 0;
 
 function reiniciar() {
+
+    console.log(puntaje);
+    console.log(buenas);
+    console.log(malas);
     
     activarBotones()
 
@@ -117,10 +139,9 @@ function reiniciar() {
     console.log(counta);
     for (const btn of btns) {
         btn.style.background = "#502158";
-       
     }
 
-    if(counta >=8){
+    if(counta >=12){
         window.location.href = "./final.html"
     }else{
         escogerPreguntas(counta)
@@ -138,15 +159,10 @@ function reiniciar() {
 
 function escogerPreguntas(p){
 
-
 // console.log(p);
 preguntas.forEach((element)=>{
     
 pregunta = element[p]
-
-    // let data = Object.entries(element)
-// console.log(element[1]);
-// console.log(data)
 
 select_id("title").innerHTML = pregunta.title
 select_id("btn1").innerHTML = pregunta.response
@@ -186,7 +202,7 @@ function styles(id) {
 
 function tiempo(){
 
-    let time = 60
+    let time = 1
 
     stop = setInterval(() => {
 

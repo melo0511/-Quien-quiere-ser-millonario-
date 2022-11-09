@@ -72,4 +72,50 @@ export const preguntas =[
       incorrecta2: "Respetar los bienes y elementos de propiedad de los integrantes de la comunidad que estén en su ambiente de formación.",
       incorrecta3: "Utilizar la dotación o ropa de trabajo y elementos de protección personal."
     },
+
+    8:{
+      title: "9. Cuál de las siguientes acciones corresponde a una medida formativa?",
+      
+      incorrecta1: "Firmar un libro de actas.",
+      response: "Llamado de atención verbal.",
+      incorrecta2: "Citación a comité.",
+      incorrecta3: "Entrevista con el coordinador."
+    },
+
+    9:{
+      title: "10. Cuanto tiempo se establece para la presentación del plan de mejoramiento académico:",
+      
+      incorrecta1: "7 días hábiles.",
+      response: "15 días.",
+      incorrecta2: "30 días.",
+      incorrecta3: "Los días que pida el aprendiz."
+    },
+
+    10:{
+      title: "11. Definición de sanción según el reglamento:",
+      
+      incorrecta1: "Medidas adoptadas por el ministerio de educación ante una falta académica y disciplinaria.",
+      response: "Medidas adoptadas por el coordinador académico y director de grupo  ante una falta académica y disciplinaria.",
+      incorrecta2: "Medidas adoptadas por el Sena ante una falta académica y disciplinaria.",
+      incorrecta3: "Medidas adoptadas por el ministerio del trabajo ante una falta académica y disciplinaria."
+    },
+
+    11:{
+      title: "12. El condicionamiento de matrícula es:",
+      
+      incorrecta1: "Llamado de atención.",
+      response: "Acto administrativo.",
+      incorrecta2: "Plan de mejoramiento.",
+      incorrecta3: "sanción."
+    },
+
+    12:{
+      title: "13. Cuando se presenta una cancelación de matrícula por motivos disciplinarios, el aprendiz no podrá inscribirse nuevamente al sena por el siguiente periodo:",
+      
+      incorrecta1: "Entre 6 y 12 meses.",
+      response: "Entre 12 y 24 meses.",
+      incorrecta2: "Entre 18 y 24 meses.",
+      incorrecta3: "24 meses."
+    }
+
 }];
