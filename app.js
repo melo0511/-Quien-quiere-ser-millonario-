@@ -35,8 +35,6 @@ const containerPregunta = document.createElement('div')
 const btnContinuar = document.createElement('button')
 
 const modal = document.querySelector('.modal');
-const modalc = document.querySelector('.modal-container');
-const close = document.querySelector(".close")
 
 containerPregunta.classList.add('containerPregunta')
 btnContinuar.classList.add('btnContinuar')
@@ -47,6 +45,8 @@ const emoji = document.createElement('div')
 
 capaemoji.classList.add('capaemoji')
 emojiMensaje.classList.add('emojiMensaje')
+
+const contComodin = document.getElementById('contComodin')
 
 function mensajeEmoji(){
     capaemoji.style.display = "flex"
@@ -70,10 +70,13 @@ window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
 
 window.addEventListener('DOMContentLoaded',()=>{
 
+    contComodin.style.display = "none"
+
     posicionPregunta.textContent = "Pregunta "+countaP
 
     capaemoji.style.display = "none"
     btnSiguiente.style.display = "none"
+    modalcontainer.style.display ="none"
 
     activarBotones()
     animacionBtn()
@@ -100,44 +103,60 @@ const btn4 = document.getElementById("btn4")
 const publico = document.getElementById("comodinP")
 const telefono = document.getElementById("comodinT")
 
-telefono.addEventListener("click",fAbrir)
-publico.addEventListener("click",fAbrir)
+const tituloModal = document.getElementById('tituloModal')
+
+const containerTime = document.getElementById('containerTime')
+
+telefono.addEventListener('click',()=>{
+    detenerContadores()
+    fAbrir()
+    tituloModal.textContent = "!Tienes dos minutos para llamar un amigo!"
+    containerTime.innerHTML = ""
+    containerTime.appendChild(contComodin)
+    contComodin.style.display = "flex"
+})
+
+publico.addEventListener('click',()=>{
+    detenerContadores()
+    fAbrir()
+    tituloModal.textContent = "!Tienes dos minutos para pedir ayuda del publico!"
+    containerTime.innerHTML = ""
+    containerTime.appendChild(contComodin)
+    contComodin.style.display = "flex"
+})
 
 const temp = document.getElementById("count")
 
 //modaL
-  close.addEventListener("click", fCerrar)
+
+const modalcontainer = document.querySelector('.modal-container');
+
   
-  function fCerrar() {
-    clearInterval(stop2)
-    clearInterval(stop3)
-    tiempo()
-    modal.classList.toggle('modal-close');
+  function fAbrir() {
+    modalcontainer.style.opacity ="1"
+    modalcontainer.style.display ="flex"
     setTimeout(function(){
-        modalc.style.opacity ="0"
-        modalc.style.visibility ="hidden"
-    },400)
-  }
-  
-  function fAbrir(e) {
-    clearInterval(stop)
-    e.preventDefault();
-    modalc.style.opacity ="1"
-    modalc.style.visibility ="visible"
-    modal.classList.toggle ("modal-close");
+      mini()
+      tiempoComodin()
+    },4000)
   }
 
 //   COMODINES
+
+function mini(){
+    modalcontainer.style.opacity ="0"
+    modalcontainer.style.display ="none"
+    clearInterval(stop)
+    tiempoComodin()
+    // segundos()
+}
   publico.addEventListener('click',()=>{
-  
     publico.style.backgroundColor = "#3e3e3e"
     publico.disabled = true
     clearInterval(stop)
     limpiar()
     activarBotones()
     desordenar(pregunta)
-
-    
 })
 telefono.addEventListener('click',()=>{
     telefono.style.backgroundColor = "#3e3e3e"
@@ -146,8 +165,6 @@ telefono.addEventListener('click',()=>{
     limpiar()
     clearInterval(stop)
     activarBotones()
-    
-    
 })
   function limpiar() {
     for (const btn of btns) {
@@ -167,11 +184,17 @@ btn1.addEventListener('click',()=>{
         mensajeEmoji()
         emojiMensaje.textContent = "¡Correcto!"
         emoji.classList.add('emojiFeliz')
+        detenerContadores()
+        publico.style.backgroundColor = "#3e3e3e"
+        publico.disabled = true
+        telefono.style.backgroundColor = "#3e3e3e"
+        telefono.disabled = true
     }else{
         btns[0].style.backgroundColor = "red";
         mensajeEmoji()
         emojiMensaje.textContent = "Incorrecto"
-        emoji.classList.add('emojiTriste') 
+        emoji.classList.add('emojiTriste')
+        detenerContadores()
     }
     
 })
@@ -185,11 +208,17 @@ btn2.addEventListener('click',()=>{
         mensajeEmoji()
         emojiMensaje.textContent = "¡Correcto!"
         emoji.classList.add('emojiFeliz')
+        detenerContadores()
+        publico.style.backgroundColor = "#3e3e3e"
+        publico.disabled = true
+        telefono.style.backgroundColor = "#3e3e3e"
+        telefono.disabled = true
     }else{
         btns[1].style.backgroundColor = "red";
         mensajeEmoji()
         emojiMensaje.textContent = "Incorrecto"
         emoji.classList.add('emojiTriste')
+        detenerContadores()
     }
       
 })
@@ -203,11 +232,17 @@ btn3.addEventListener('click',()=>{
         mensajeEmoji()
         emojiMensaje.textContent = "¡Correcto!"
         emoji.classList.add('emojiFeliz')
+        detenerContadores()
+        publico.style.backgroundColor = "#3e3e3e"
+        publico.disabled = true
+        telefono.style.backgroundColor = "#3e3e3e"
+        telefono.disabled = true
     }else{
         btns[2].style.backgroundColor = "red";
         mensajeEmoji()
         emojiMensaje.textContent = "Incorrecto"
         emoji.classList.add('emojiTriste') 
+        detenerContadores()
     }
    
 })
@@ -221,11 +256,17 @@ btn4.addEventListener('click',()=>{
         mensajeEmoji()
         emojiMensaje.textContent = "¡Correcto!"
         emoji.classList.add('emojiFeliz')
+        detenerContadores()
+        publico.style.backgroundColor = "#3e3e3e"
+        publico.disabled = true
+        telefono.style.backgroundColor = "#3e3e3e"
+        telefono.disabled = true
     }else{
         btns[3].style.backgroundColor = "red";
         mensajeEmoji()
         emojiMensaje.textContent = "Incorrecto"
-        emoji.classList.add('emojiTriste') 
+        emoji.classList.add('emojiTriste')
+        detenerContadores()
     }
         
 })
@@ -284,7 +325,7 @@ function reiniciar() {
     publico.style.backgroundColor = "#372158"
     
 
-    if(counta >=12){
+    if(counta >=22){
         window.location.href = "./index.html"
     }else{
         escogerPreguntas(counta)
@@ -346,6 +387,8 @@ function styles(id) {
 
 function tiempo(){
 
+    detenerContadores()
+
     let time = 60
 
     stop = setInterval(() => {
@@ -361,32 +404,28 @@ function tiempo(){
         if(time<0){
 
             temp.textContent = "Tiempo"
-            temp.style.color = "white"
-
+            desactivarBotones()
             clearInterval(stop)
-
+            btnSiguiente.style.display = "flex"
         }
     
     }, 1000);
     
 }
 
-const contComodin = document.getElementById('contComodin')
-
-telefono.addEventListener('click',tiempoComodin)
-publico.addEventListener('click',tiempoComodin)
-
 let stop2 = 0
 let stop3 = 0
 
 function tiempoComodin(){
 
+    detenerContadores()
+
     let time = 60
 
         stop2 = setInterval(() => {
-
+        
         contComodin.textContent = "02:00"
-
+        
         time = time -1 
 
         if(contComodin.textContent = "02:00"){
@@ -415,7 +454,7 @@ function segundos(){
     let time = 60
 
     stop3 = setInterval(() => {
-
+        temp.innerHTML = contComodin.textContent
         time = time -1 
         
         contComodin.textContent = "00:" + time
@@ -428,8 +467,15 @@ function segundos(){
 
             contComodin.textContent = "Tiempo"
             clearInterval(stop3)
-
+            desactivarBotones()
+            btnSiguiente.style.display = "flex"
         }
     
     }, 1000);
+}
+
+function detenerContadores() {
+    clearInterval(stop)
+    clearInterval(stop2)
+    clearInterval(stop3)
 }
