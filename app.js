@@ -19,7 +19,11 @@ btn1.disabled = true
 btn2.disabled = true
 btn3.disabled = true
 btn4.disabled = true
+}
 
+function desactivarComodines(params) {
+    publico.disabled = true
+    telefono.disabled = true
 }
 
 let countaP = 1
@@ -63,7 +67,10 @@ function mensajeEmoji(){
 const btnSiguiente = document.getElementById('btnSiguiente')
 
 btnSiguiente.addEventListener('click',()=>{
-    reseteo()
+    reiniciar()
+    tiempo()
+    clearInterval(stop)
+    
 })
 
 window.addEventListener("DOMContentLoaded",escogerPreguntas(0))
@@ -111,7 +118,8 @@ telefono.addEventListener('click',()=>{
     detenerContadores()
     fAbrir()
     tituloModal.textContent = "!Tienes dos minutos para llamar un amigo!"
-    containerTime.innerHTML = ""
+    // containerTime.innerHTML = ""
+    temp.style.display = "none"
     containerTime.appendChild(contComodin)
     contComodin.style.display = "flex"
 })
@@ -120,7 +128,8 @@ publico.addEventListener('click',()=>{
     detenerContadores()
     fAbrir()
     tituloModal.textContent = "!Tienes dos minutos para pedir ayuda del publico!"
-    containerTime.innerHTML = ""
+    // containerTime.innerHTML = ""
+    temp.style.display = "none"
     containerTime.appendChild(contComodin)
     contComodin.style.display = "flex"
 })
@@ -303,8 +312,11 @@ function reiniciar() {
 
     btnSiguiente.style.display = "none"
 
+    temp.style.display = "flex"
+    contComodin.style.display = "none"
+    tiempo()
     clearInterval(stop)
-    temp.textContent = "01:00";
+    temp.innerHTML = "01:00";
 
     capaPregunta.style.display = "flex"
     PreguntaPrincipal.style.display = "flex"
@@ -355,6 +367,8 @@ select_id("btn2").innerHTML = pregunta.incorrecta1
 select_id("btn3").innerHTML = pregunta.incorrecta2
 select_id("btn4").innerHTML = pregunta.incorrecta3
 
+
+
 desordenar(pregunta)
 })
 }
@@ -373,6 +387,18 @@ select_id("btn1").innerHTML = "A. " +posibles_respuestas[0]
 select_id("btn2").innerHTML = "B. " +posibles_respuestas[1]
 select_id("btn3").innerHTML = "C. " +posibles_respuestas[2]
 select_id("btn4").innerHTML = "D. " +posibles_respuestas[3]
+
+}
+
+function correcta() {
+    for (const btn of btns) {
+        const newStr = btn.textContent.slice(3)
+        if(newStr == pregunta.response){
+            btn.style.backgroundColor = "#24681d"
+        }
+
+    }
+    
 }
 
 function select_id(id) {
@@ -406,7 +432,12 @@ function tiempo(){
             temp.textContent = "Tiempo"
             desactivarBotones()
             clearInterval(stop)
-            btnSiguiente.style.display = "flex"
+            mensajeEmoji()
+            // plus
+            emojiMensaje.textContent = "SE TE ACABO EL TIEMPO!"
+            emoji.classList.add('emojiTiempo')
+            correcta()
+            desactivarComodines()
         }
     
     }, 1000);
@@ -464,11 +495,16 @@ function segundos(){
         }
 
         if(time<0){
-
+            
             contComodin.textContent = "Tiempo"
             clearInterval(stop3)
             desactivarBotones()
             btnSiguiente.style.display = "flex"
+            // plus
+            emojiMensaje.textContent = "SE TE ACABO EL TIEMPO!"
+            emoji.classList.add('emojiTriste')
+            correcta()
+            desactivarComodines()
         }
     
     }, 1000);

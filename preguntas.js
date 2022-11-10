@@ -77,8 +77,8 @@ export const preguntas =[
       title: "9. etapa productiva es considerada como:",
 
       incorrecta1: "Etapa en la cual se complementa, conoce y se confronta el conocimiento del aprendiz.",
-      incorrecta2: "Etapa en la cual se complementa, fortalece y consolida sus competencias en términos de conocimientos, habilidades, destrezas, v alores y actitudes.",
-      response: "Etapa en la cual el aprendiz empieza a recuperar lo que invirtió en gastos de la formación.",
+      response: "Etapa en la cual se complementa, fortalece y consolida sus competencias en términos de conocimientos, habilidades, destrezas, v alores y actitudes.",
+      incorrecta2: "Etapa en la cual el aprendiz empieza a recuperar lo que invirtió en gastos de la formación.",
       incorrecta3: "Etapa en la cual deja de cumplir con el reglamento y solo se cumple el reglamento de la empresa."
     },
 
@@ -88,15 +88,15 @@ export const preguntas =[
       incorrecta1: "Contrato de aprendizaje, apoyo virtual a una empresa, proyecto productivo, ayuda a una oficina en el Sena, pasantía.",
       incorrecta2: "Apoyo en la coordinación, tres meses más de etapa lectiva, contrato de aprendizaje, proyecto productivo, apoyos de sostenimiento.",
       response: "Contrato de aprendizaje, apoyo unidad productiva familiar, apoyo a institución estatal, ONG, o entidad sin ánimo de lucro, monitorias, vínculo laboral, proyecto productivo, pasantía.",
-      incorrecta3: "?"
+      incorrecta3: "Todas las anteriores"
     },
 
     10:{
       title: "11.Para optar por la alternativa de contrato de aprendizaje el aprendiz debe:",
 
       incorrecta1: "solicitar a su director de grupo que le ayude a buscar una empresa y enviar un correo a la coordinación para que lo tengan en cuenta.",
-      incorrecta2: "gestionar su registro en SGVA, actualizar sus datos y verificar que correspondan a los del sistema para gestión de la formación, consultando periódicamente las oportunidades.",
-      response: "Actualizar sus datos en Sofía plus y entregar el formulario en la oficina de bienestar, al aprendiz.",
+      response: "gestionar su registro en SGVA, actualizar sus datos y verificar que correspondan a los del sistema para gestión de la formación, consultando periódicamente las oportunidades.",
+      incorrecta2: "Actualizar sus datos en Sofía plus y entregar el formulario en la oficina de bienestar, al aprendiz.",
       incorrecta3: "Esperar que termine la etapa lectiva, pedir la paz y salvo y entregar el formulario de solicitud."
     },
 
@@ -105,16 +105,16 @@ export const preguntas =[
 
       incorrecta1: "Firmar el documento donde opta por la alternativa de certificación y entregarla a un instructor de confianza.",
       incorrecta2: "Solicitar autorización en bienestar al aprendiz y la información se debe registrar inmediatamente en el sistema para gestión de la formación.",
-      response: "Solicitar autorización al subdirector y reportar la información al coordinador en los siguientes 8 días hábiles.",
-      incorrecta3: "Solicitar aprobación a la coordinación académica y la información se debe registrar inmediatamente en el sistema para gestión de la formación."
+      incorrecta3: "Solicitar autorización al subdirector y reportar la información al coordinador en los siguientes 8 días hábiles.",
+      response: "Solicitar aprobación a la coordinación académica y la información se debe registrar inmediatamente en el sistema para gestión de la formación."
     },
 
     12:{
       title: "13. El seguimiento y evaluación de etapa productiva incluye el siguiente proceso:",
 
-      incorrecta1: "Es de carácter obligatorio, se elabora bitácora quincenal, se solicita instructor de seguimiento, y se realizan visitas de seguimiento.",
-      incorrecta2: "Es de carácter obligatorio, se elabora bitácora quincenal, se solicita instructor de seguimiento, y se realizan visitas de seguimiento.",
-      response: "Se realiza de acuerdo a la necesidad y solicitud de la empresa y es de forma virtual.",
+      response: "Es de carácter obligatorio, se elabora bitácora quincenal, se solicita instructor de seguimiento, y se realizan visitas de seguimiento.",
+      incorrecta2: "Es voluntario y de acuerdo a la necesidad.",
+      incorrecta1: "Se realiza de acuerdo a la necesidad y solicitud de la empresa y es de forma virtual.",
       incorrecta3: "Se concilia con el empresario y el aprendiz, y se envían evidencias fotográficas del trabajo realizado semanalmente a la coordinación académica."
     },
 
@@ -122,8 +122,8 @@ export const preguntas =[
       title: "14. Cuando el aprendiz no alcanza los resultados de aprendizaje en la etapa productiva se procede a.",
 
       incorrecta1: "Citar los acudientes.",
-      incorrecta2: "Realizar un comité de evaluación y seguimiento.",
-      response: "Citar al empresario y el aprendiz.",
+      response: "Realizar un comité de evaluación y seguimiento.",
+      incorrecta2: "Citar al empresario y el aprendiz.",
       incorrecta3: "Cancelar la matricula.",
     },
 
@@ -140,17 +140,17 @@ export const preguntas =[
       title: "16. De acuerdo al capítulo VI (Gestión académico-administrativa) cuando se solicita un retiro voluntario el aprendiz:",
 
       incorrecta1: "Debe dejar de asistir a formación y notificar al vocero.",
-      incorrecta2: "Registrar la novedad den Sofía plus y radicar un oficio al centro de formación e implica que no puede acceder a programas de formación dentro de los 6 meses siguientes.",
-      response: "Enviar un correo al comité de evaluación y seguimiento, y no volver a ingresar a las instalaciones dentro de los 6 meses siguientes.",
+      response: "Registrar la novedad en Sofía plus y radicar un oficio al centro de formación e implica que no puede acceder a programas de formación dentro de los 6 meses siguientes.",
+      incorrecta2: "Enviar un correo al comité de evaluación y seguimiento, y no volver a ingresar a las instalaciones dentro de los 6 meses siguientes.",
       incorrecta3: "Entregar el carné y salir de los grupos de WhatsApp institucionales.",
     },
 
     16:{
       title: "17. De acuerdo al capítulo VII (proceso de formación, incumplimiento y deserción) el incumplimiento injustificado se da cuando:",
 
-      incorrecta1: "Se deja de cumplir con evidencias y actividades de la ruta de aprendizaje y no se informa en los 2 días hábiles siguientes a la ocurrencia, presentando los soportes.",
+      response: "Se deja de cumplir con evidencias y actividades de la ruta de aprendizaje y no se informa en los 2 días hábiles siguientes a la ocurrencia, presentando los soportes.",
       incorrecta2: "Se deja de asistir por falta de dinero para el transporte y no se le informa al vocero.",
-      response: "Se deja de cumplir con evidencias por problemas familiares y de salud.",
+      incorrecta1: "Se deja de cumplir con evidencias por problemas familiares y de salud.",
       incorrecta3: "Se cita a un comité por falta de responsabilidad y compromiso en la formación.",
     },
 
