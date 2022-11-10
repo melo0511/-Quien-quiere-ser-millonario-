@@ -126,7 +126,36 @@ const temp = document.getElementById("count")
     modalc.style.visibility ="visible"
     modal.classList.toggle ("modal-close");
   }
-   
+
+//   COMODINES
+  publico.addEventListener('click',()=>{
+  
+    publico.style.backgroundColor = "#3e3e3e"
+    publico.disabled = true
+    clearInterval(stop)
+    limpiar()
+    activarBotones()
+    desordenar(pregunta)
+
+    
+})
+telefono.addEventListener('click',()=>{
+    telefono.style.backgroundColor = "#3e3e3e"
+    telefono.disabled = true
+    desordenar(pregunta)
+    limpiar()
+    clearInterval(stop)
+    activarBotones()
+    
+    
+})
+  function limpiar() {
+    for (const btn of btns) {
+        btn.style.background = "#372158";
+       
+    }
+}
+
 //modal
 
 btn1.addEventListener('click',()=>{
@@ -160,7 +189,7 @@ btn2.addEventListener('click',()=>{
         btns[1].style.backgroundColor = "red";
         mensajeEmoji()
         emojiMensaje.textContent = "Incorrecto"
-        emoji.classList.add('emojiTriste') 
+        emoji.classList.add('emojiTriste')
     }
       
 })
@@ -247,6 +276,13 @@ function reiniciar() {
     for (const btn of btns) {
         btn.style.background = "#372158";
     }
+
+    // COMODIN
+    telefono.disabled = false
+    publico.disabled = false
+    telefono.style.backgroundColor = "#372158"
+    publico.style.backgroundColor = "#372158"
+    
 
     if(counta >=12){
         window.location.href = "./index.html"
@@ -338,6 +374,7 @@ function tiempo(){
 const contComodin = document.getElementById('contComodin')
 
 telefono.addEventListener('click',tiempoComodin)
+publico.addEventListener('click',tiempoComodin)
 
 let stop2 = 0
 let stop3 = 0

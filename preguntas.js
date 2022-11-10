@@ -14,17 +14,17 @@ export const preguntas =[
       title: "2. De acuerdo el reglamento son derechos del aprendiz Sena.",
 
       incorrecta1: "Presentar los instrumentos de evaluación cuando se sienta preparado.",
-      incorrecta2: "Tener conocimiento de los resultados obtenidos en las evaluaciones dentro de ellos 8 días hábiles siguientes.",
+      response: "Tener conocimiento de los resultados obtenidos en las evaluaciones dentro de ellos 8 días hábiles siguientes.",
       incorrecta3: "Recibir formación únicamente en la parte técnica.",
-      response: "Certificarse únicamente por contrato de aprendizaje o pasantía."
+      incorrecta2: "Certificarse únicamente por contrato de aprendizaje o pasantía."
     },
 
     2:{
-      title: "3. Según el capitulo II articulo 8 del reglamento del aprendiz, los estímulos e incentivos que forman parte plan nacional de bienestar son:",
+      title: "3. Según el capitulo II articulo 8 del reglamento del aprendiz, los estímulos e incentivos que forman parte del plan nacional de bienestar son:",
 
       incorrecta1: "Recibir auxilio de transporte",
-      incorrecta2: "Reconocimiento por parte del comité de evaluación a los aprendices que se destacan por su excelente desempeño académico y convivencia.",
-      response: "Ser exonerado de la presentación de instrumentos de evaluación",
+      response: "Reconocimiento por parte del comité de evaluación a los aprendices que se destacan por su excelente desempeño académico y convivencia.",
+      incorrecta2: "Ser exonerado de la presentación de instrumentos de evaluación",
       incorrecta3: "Recibir apoyo de alimentación (almuerzos)"
     },
 
@@ -32,17 +32,17 @@ export const preguntas =[
       title: "4. El reglamento habla de los deberes de los aprendices en el capítulo.",
 
       incorrecta1: "VII",
-      response: "VI",
+      incorrecta3: "VI",
       incorrecta2: "II",
-      incorrecta3: "III"
+      response: "III"
     },
 
     4:{
       title: "5. De acuerdo con el reglamento son deberes de los aprendices:",
 
-      response: "Cumplir con las actividades de su proceso formativo durante la etapa lectiva",
+      incorrecta2: "Cumplir con las actividades de su proceso formativo durante la etapa lectiva",
       incorrecta1: "Conocer y asumir directrices institucionales, al igual que el reglamento del aprendiz, y cumplir las que sean de su agrado.",
-      incorrecta2: "Portar permanentemente el carné en un lugar visible, durante su proceso formativo, y renovarlo de acuerdo con las disposiciones vigente y devolverlo al finalizar el programa.",
+      response: "Portar permanentemente el carné en un lugar visible, durante su proceso formativo, y renovarlo de acuerdo con las disposiciones vigente y devolverlo al finalizar el programa o cuando presente retiro o aplazamiento.",
       incorrecta3: "Postularse a las convocatorias de apoyos socioeconómicos para tener como subsidiar gastos de la formación."
     },
 
@@ -50,26 +50,152 @@ export const preguntas =[
       title: "6. Quienes son los encargados de seleccionar los candidatos a beneficiarios de los estímulos e incentivos de conformidad con los criterios estipulados en el reglamento.",
 
       incorrecta1: "Los directores de grupo",
-      response: "Los coordinadores académicos",
+      incorrecta3: "Los coordinadores académicos",
       incorrecta2: "Los voceros",
-      incorrecta3: "El comité de evaluación y seguimiento"
+      response: "El comité de evaluación y seguimiento"
     },
 
     6:{
       title: "7. De acuerdo con el capítulo IV donde se establecen las prohibiciones para los aprendices están:",
 
-      incorrecta1: "Terminar unilateralmente el contrato de aprendizaje, sin el visto bueno del empleador y del Sena.",
+      response: "Terminar unilateralmente el contrato de aprendizaje, sin el visto bueno del empleador y del Sena.",
       incorrecta2: "Manifestarles a los instructores y administrativos sus puntos de vista o inconformidades.",
       incorrecta3: "Fumar o consumir sustancias alcohólicas o psicoactivas en los ambientes de formación.",
-      response: "Fumar o consumir sustancias alcohólicas o psicoactivas en los ambientes de formación."
+      incorrecta1: "Obstaculizar el ingreso a las instalaciones del centro de formación, perturbando el desarrollo normal de las actividades, sin previo aviso."
     },
 
     7:{
       title: "8. Es deber de los aprendices:",
       
       incorrecta1: "Portar el uniforme el fin de semana cuando se reúna con los compañeros del Sena.",
-      response: "Portar el carné cuando asista a conciertos, discotecas, restaurantes, fiestas de 15, grados y además actividades sociales, como representante de la comunidad Sena.",
+      incorrecta3: "Portar el carné cuando asista a conciertos, discotecas, restaurantes, fiestas de 15, grados y además actividades sociales, como representante de la comunidad Sena.",
       incorrecta2: "Respetar los bienes y elementos de propiedad de los integrantes de la comunidad que estén en su ambiente de formación.",
-      incorrecta3: "Utilizar la dotación o ropa de trabajo y elementos de protección personal."
+      response: "Utilizar la dotación o ropa de trabajo y elementos de protección personal."
+    },
+
+    8:{
+      title: "9. etapa productiva es considerada como:",
+
+      incorrecta1: "Etapa en la cual se complementa, conoce y se confronta el conocimiento del aprendiz.",
+      incorrecta2: "Etapa en la cual se complementa, fortalece y consolida sus competencias en términos de conocimientos, habilidades, destrezas, v alores y actitudes.",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    9:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    10:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    11:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    12:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    13:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    14:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    15:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    16:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    17:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    18:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    19:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    20:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
+    },
+
+    21:{
+      title: "1. El reglamento del aprendiz se adopta como parte del acuerdo",
+
+      incorrecta1: "009",
+      incorrecta2: "Entre el subdirector y los instructores",
+      response: "007",
+      incorrecta3: "Entre la comunidad educativa",
     },
 }];
