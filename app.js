@@ -70,6 +70,8 @@ btnSiguiente.addEventListener('click',()=>{
     reiniciar()
     tiempo()
     clearInterval(stop)
+    emoji.classList.remove('emojiFeliz')
+    emoji.classList.remove('emojiTriste')
     
 })
 
