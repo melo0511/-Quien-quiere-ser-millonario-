@@ -498,11 +498,9 @@ function segundos(){
             
             contComodin.textContent = "Tiempo"
             clearInterval(stop3)
-            desactivarBotones()
-            btnSiguiente.style.display = "flex"
-            // plus
+            mensajeEmoji()
             emojiMensaje.textContent = "SE TE ACABO EL TIEMPO!"
-            emoji.classList.add('emojiTriste')
+            emoji.classList.add('emojiTiempo')
             correcta()
             desactivarComodines()
         }
